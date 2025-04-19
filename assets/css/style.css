@@ -1,0 +1,374 @@
+/* Tab System Styling */
+.playlist-tabs-container {
+    position: relative;
+    padding-top: 5px;
+}
+
+.playlist-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 0.5rem;
+    background-color: #f8f9fa;
+    scrollbar-width: thin;
+}
+
+.playlist-tabs::-webkit-scrollbar {
+    height: 5px;
+}
+
+.playlist-tabs::-webkit-scrollbar-thumb {
+    background: #a8a8a8;
+    border-radius: 3px;
+}
+
+.playlist-tabs .nav-link {
+    color: #495057;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.playlist-tabs .nav-link.active {
+    color: #ff0000;
+    border-bottom-color: #ff0000;
+    font-weight: 500;
+}
+
+/* Playlist Container */
+.playlist-container {
+    height: calc(100vh - 280px);
+    overflow-y: auto;
+}
+
+.playlist-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.playlist-container::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+/* Video Items Styling */
+#playlist .list-group-item {
+    cursor: pointer;
+    border-left: none;
+    border-right: none;
+    padding: 10px 15px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Reduced gap */
+
+    min-height: 60px; 
+    align-items: flex-start; /* Align items to top */
+
+    border-top: none !important;   
+    border-bottom: none !important;
+    
+    padding-top: 6px;              
+    padding-bottom: 6px;           
+    margin-top: 0;                 
+    margin-bottom: 0;              
+
+
+}
+
+#playlist .list-group-item:hover {
+    background-color: #f1f1f1;
+}
+
+#playlist .list-group-item.active {
+    background-color: #d6f7db;
+    border-left: 3px solid #ff0000;
+    font-weight: 500;
+    
+}
+
+/* Thumbnail styling */
+.video-thumbnail {
+    width: 90px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-left: 0; /* Removed negative margin */
+}
+
+/* Video info container */
+.video-info {
+    flex-grow: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px; /* Space between title and description */
+}
+
+/* Video number styling */
+.video-number {
+	color: #b4bec8;
+	margin-right: 5px;
+	font-size: 12px;
+}
+
+/* Video title with wrapping */
+.video-title {
+    color: #4c7a3e;
+    /* font-weight: 600; */
+    display: -webkit-box;
+    --webkit-line-clamp: 2; /* Show max 2 lines */
+    --webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal; /* Changed from nowrap */
+    line-height: 1.3;
+    margin-left: 5px;
+}
+
+
+
+
+/* Video description and author styling */
+.video-description {
+	/* color: #6c757d; */
+	color: #f76fb9d4;
+	font-size: 0.6rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-left: 25px;
+}
+
+.video-author {
+    color: #6c757d;
+    font-size: 0.6rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 25px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+
+
+/* Play/Stop icon positioning */
+.video-action-icon {
+    display: flex;
+    align-items: center;  /* Vertically center */
+    height: 45px;        /* Match thumbnail height */
+    margin-right: 5px;   /* Space between icon and thumbnail */
+}
+
+
+/* Header Styling */
+.card-header.bg-danger h4 {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .playlist-container {
+        height: calc(50vh - 160px);
+    }
+    
+    .video-thumbnail {
+        width: 60px;
+        height: 34px;
+    }
+    
+    #playlist .list-group-item {
+        padding: 8px 12px;
+        gap: 8px;
+    }
+}
+
+
+
+/* Tab name in title bar */
+.card-header.bg-danger h4 .tab-name {
+    font-size: 0.7em;
+    opacity: 0.8;
+    font-weight: normal;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .card-header.bg-danger h4 .tab-name {
+        display: block;
+        margin-top: 2px;
+    }
+}
+
+
+
+
+/* Search term in title bar - minimal style */
+.card-header.bg-danger h4 .search-term {
+    font-size: 0.6em;  /* Even smaller */
+    opacity: 0.6;      /* More transparent */
+    color: #cccccc;    /* Light gray */
+    margin-left: 3px;  /* Small spacing */
+    vertical-align: middle;
+}
+
+/* Tab name style remains same */
+.card-header.bg-danger h4 .tab-name {
+    font-size: 0.7em;
+    opacity: 0.8;
+    font-weight: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Clear search button styling */
+#clearSearch {
+    border-left: none;
+    border-right: none;
+    padding: 0 8px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+#clearSearch:hover {
+    opacity: 1;
+}
+
+/* Remove focus outline */
+#searchInput:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #ced4da;
+}
+
+/* Adjust search input border */
+#searchInput {
+    border-right: none;
+}
+
+/* Adjust search button border */
+.input-group .btn:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+
+
+
+
+
+
+
+/* Meta Bar Styling */
+.meta-bar {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 0px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+/* Meta Text Styling */
+.meta-text {
+    color: #fff;
+    font-size: 10px;
+    opacity: 1;
+}
+
+.tab-name {
+    font-weight: 600;
+}
+
+.author-name {
+    opacity: 0.4;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .meta-text {
+        font-size: 0.75rem;
+    }
+}
+
+
+
+#videoTitle {
+	font-size: 15px;
+	text-shadow: -1px 5px 4px #000000, 0px -2px 5px #000;
+}
+
+
+
+
+
+/* Tab Name Styling */
+.tab-name {
+    font-weight: 600;
+    color: #fff;
+    opacity: 0.5;
+    margin-left: 0px;
+    text-align: center;
+}
+
+/* Search Term Styling */
+.search-term {
+    font-size: 0.75em;
+    opacity: 0.7;
+    font-style: italic;
+    color: #ddd;
+    margin-left: 5px;
+}
+
+/* Button Group Styling */
+.meta-bar .btn-group {
+    flex-shrink: 0;
+    margin-left: 10px;
+}
+
+/* Main Title Styling */
+.card-header h4 {
+    margin-top: 8px;
+    line-height: 1.3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .meta-bar {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+    
+    .meta-bar .btn-sm {
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+
+
+
+
+
